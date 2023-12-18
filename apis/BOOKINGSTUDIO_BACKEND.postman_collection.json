@@ -1,0 +1,2563 @@
+{
+	"info": {
+		"_postman_id": "e290f807-20b4-43c2-b39f-8cbad24a40c8",
+		"name": "BOOKINGSTUDIO_BACKEND",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18141375"
+	},
+	"item": [
+		{
+			"name": "Partner",
+			"item": [
+				{
+					"name": "Get All Partner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/register-partner?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"register-partner"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Partner By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/register-partner/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"register-partner",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Partner By Id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "PartnerName",
+									"value": "Hang Đôi Studioooo",
+									"type": "text"
+								},
+								{
+									"key": "RepresentativeName",
+									"value": "Hoàng Đức Thắng",
+									"type": "text"
+								},
+								{
+									"key": "Phone",
+									"value": "0967445997",
+									"type": "text"
+								},
+								{
+									"key": "OtherPhone",
+									"value": "0777445997",
+									"type": "text"
+								},
+								{
+									"key": "Email",
+									"value": "hangdoistudio@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "ReEmail",
+									"value": "hangdoistudio@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "BusinessRegistrationLicenseNumber",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "Address",
+									"value": "522 Nguyễn Hữu Thọ, p.Khuê Trung, q.Cẩm Lệ, Tp. Đà Nẵng",
+									"type": "text"
+								},
+								{
+									"key": "BankBranchName",
+									"value": "ACB bank - Chi nhánh Hòa Khánh",
+									"type": "text"
+								},
+								{
+									"key": "BankAccount",
+									"value": "2412037",
+									"type": "text"
+								},
+								{
+									"key": "BankAccountOwnerName",
+									"value": "HOANG DUC THANG",
+									"type": "text"
+								},
+								{
+									"key": "IdentifyLicenses",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "Note",
+									"value": "asdasdasdasdasd",
+									"type": "text"
+								},
+								{
+									"key": "IsDeleted",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "SignalImage",
+									"value": "[null,1,2,null]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/register-partner/update/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"register-partner",
+								"update",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Partner",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiTmFtZSI6ImFkbWluIiwiaWF0IjoxNjU3NTE0MzExLCJleHAiOjE2NTc2MDA0NzV9.pvcYPjhBY1-CT4FsJ85ricyDEUzkL18tJwPPgSE_ftI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"keyString\": \"\",\n    \"CreateDate\": {\n        \"startDate\": \"\",\n        \"endDate\": \"\"\n    },\n    \"updateDate\": {\n        \"startDate\": \"\",\n        \"endDate\": \"\"\n    },\n    \"IsDeleted\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/register-partner/filter?limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"register-partner",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BookingUser",
+			"item": [
+				{
+					"name": "Get All Booking User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/booking-user?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"booking-user"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Booking User By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://bookingstudio-cus.herokuapp.com/api/booking-user/2",
+							"protocol": "https",
+							"host": [
+								"bookingstudio-cus",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"booking-user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Booking User & Block acount send stutus:false",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"LastModificationTime\":\"2022-12-31T17:52:32.623Z\",\n    \"Email\":\"admin@admin.com\",\n    \"Note\":\"ngu thi xoa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/booking-user/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"booking-user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fillter",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"keyString\": \"\",\n    \"IsDeleted\":\"\",\n    \"CreateDate\": {\n        \"startDate\": \"\",\n        \"endDate\": \"\"\n    },\n    \"updateDate\": {\n        \"startDate\": \"\",\n        \"endDate\": \"\"\n    }\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/booking-user/filter?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"booking-user",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create booking user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"providerId\": \"facebook.com\",\n    \"reloadListener\": null,\n    \"uid\": \"3166394823584408\",\n    \"displayName\": \"Ngọc Quân\",\n    \"email\": \"mylifeisbeto@gmail.com\",\n    \"emailVerified\": false,\n    \"phoneNumber\": null,\n    \"    localStorage.setItem(\"token\", resp.data.token);\n\": \"https://graph.facebook.com/3166394823584408/piure\",\n    \"isAnonymous\": false,\n    \"tenantId\": null,\n    \"providerData\": [\n        {\n            \"providerId\": \"facebook.com\",\n            \"uid\": \"3166394823584408\",\n            \"displayName\": \"Ngọc Quân\",\n            \"email\": \"mylifeisbeto@gmail.com\",\n            \"phoneNumber\": null,\n            \"photoURL\": \"https://graph.facebook.com/3166394823584408/picture\"\n        }\n    ],\n    \"metadata\": {\n        \"createdAt\": \"1659500461096\",\n        \"lastLoginAt\": \"1659954081922\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/booking-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"booking-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phoneNumber\":\"+84909788677\",\n    \"password\":\"123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/booking-user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"booking-user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "me",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/booking-user/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"booking-user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTUsIkVtYWlsIjoiKzg0OTA5NjAyMzEwQG51bGwiLCJGdWxsbmFtZSI6Iis4NDkwOTYwMjMxMCIsImlhdCI6MTY1OTkyNjQ4NywiZXhwIjoxNjYwMDEyNjUxfQ.uvIitVwRtoHCRoObQiI2FW4hF1WWdBuqhM1vKDfjWd4",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Province",
+			"item": [
+				{
+					"name": "Get All Province",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/province",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"province"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Studio Post",
+			"item": [
+				{
+					"name": "Get All Studio Post",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/studio-post?page=1&limit=10&category=6&IsVisible=&CreationTime={\"startDate\":\"\",\"endDate\":\"\"}&LastModificationTime={\"startDate\":\"\",\"endDate\":\"\"}&Name_like=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"studio-post"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "category",
+									"value": "6"
+								},
+								{
+									"key": "IsVisible",
+									"value": ""
+								},
+								{
+									"key": "CreationTime",
+									"value": "{\"startDate\":\"\",\"endDate\":\"\"}"
+								},
+								{
+									"key": "LastModificationTime",
+									"value": "{\"startDate\":\"\",\"endDate\":\"\"}"
+								},
+								{
+									"key": "Name_like",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "studioDetail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/studio-post/byid?id=1&category=6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"studio-post",
+								"byid"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "category",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/studio-post/byid?id=1&category=6&IsVisible=true&Note=ok",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"studio-post",
+								"byid"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "category",
+									"value": "6"
+								},
+								{
+									"key": "IsVisible",
+									"value": "true"
+								},
+								{
+									"key": "Note",
+									"value": "ok"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/studio-post/byid?id=7&category=6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"studio-post",
+								"byid"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "7"
+								},
+								{
+									"key": "category",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "Get All Booking",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/booking?page=1&limit=10&category=2&IsDeleted=&EntryDate={\"startDate\":\"2021-11-30T17:44:44.679Z\",\"endDate\":\"2022-01-30T17:44:44.679Z\"}&PaymentType=&Identify_like=&BookingStatus=0&PaymentStatus=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"booking"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "category",
+									"value": "2"
+								},
+								{
+									"key": "IsDeleted",
+									"value": ""
+								},
+								{
+									"key": "EntryDate",
+									"value": "{\"startDate\":\"2021-11-30T17:44:44.679Z\",\"endDate\":\"2022-01-30T17:44:44.679Z\"}"
+								},
+								{
+									"key": "PaymentType",
+									"value": ""
+								},
+								{
+									"key": "Identify_like",
+									"value": ""
+								},
+								{
+									"key": "BookingStatus",
+									"value": "0"
+								},
+								{
+									"key": "PaymentStatus",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Category\":4,\n    \"OrderByTime\":true,\n    \"OrderByTimeFrom\":\"2022-01-18 10:10:00.000000\",\n    \"OrderByTimeTo\":\"2022-01-18 20:10:00.000000\",\n    \"OrderByDateFrom\":\"\",\n    \"OrderByDateTo\":\"\",\n    \"PaymentType\":\"Offline\",\n    \"OrderNote\":\"\",\n    \"BookingUserName\":\"Khoa\",\n    \"BookingPhone\":\"0909090201\",\n    \"BookingEmail\":\"ticui@kd.com\",\n    \"BookingUserId\":163,\n    \"CreatorUserId\":163,\n    \"ProductId\":1,\n    \"IsPayDeposit\":true,\n    \"BookingValue\":1000000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/booking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Booking By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/booking/byid?id=10&category=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"booking",
+								"byid"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "10"
+								},
+								{
+									"key": "category",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Booking",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"OrderByTime\": true,\n    \"OrderByTimeFrom\": \"2022-01-12T00:00:00.000Z\",\n    \"OrderByTimeTo\": \"2022-01-12T00:00:00.000Z\",\n    \"OrderByDateFrom\": \"2022-01-12T00:00:00.000Z\",\n    \"OrderByDateTo\": \"2022-01-12T00:00:00.000Z\",\n    \"PaymentType\": null,\n    \"OrderNote\": null,\n    \"BookingUserName\": \"Anh Anh Em Em\",\n    \"BookingPhone\": \"0914481315\",\n    \"BookingStatus\": 1,\n    \"BookingEmail\": null,\n    \"StudioRoomId\": 3,\n    \"PromoCodeId\": null,\n    \"CreatorUserId\": 1,\n    \"LastModifierUserId\": null,\n    \"IsDeleted\": false,\n    \"DeleterUserId\": null,\n    \"DeletionTime\": null,\n    \"EvidenceImage\": null,\n    \"IsPayDeposit\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/booking/byid?id=2&category=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"booking",
+								"byid"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								},
+								{
+									"key": "category",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"OrderDate\": {\n        \"startDate\": \"\",\n        \"endDate\": \"\"\n    },\n    \"IsPayDeposit\":false,\n    \"PaymentType\": null,\n    \"BookingStatus\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/booking?limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"booking"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room",
+			"item": [
+				{
+					"name": "Get All Room",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/room?limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"room"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Export Data",
+			"item": [
+				{
+					"name": "Filter",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/filter?option=1&ProvinceId=2&isDelete=&CreateDate={\"startDate\": \"2021-11-30T17:39:08.081Z\",\"endDate\": \"2022-12-30T17:39:08.081Z\"}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "option",
+									"value": "1"
+								},
+								{
+									"key": "ProvinceId",
+									"value": "2"
+								},
+								{
+									"key": "isDelete",
+									"value": ""
+								},
+								{
+									"key": "CreateDate",
+									"value": "{\"startDate\": \"2021-11-30T17:39:08.081Z\",\"endDate\": \"2022-12-30T17:39:08.081Z\"}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"keyString\":\"\",\n    \"category\":1,\n    \"priceOption\":0,\n    \"price1\":0,\n    \"price2\":10000000000000000,\n    \"provinceIds\":[],\n    \"ratingOption\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/filter/advance?page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"filter",
+								"advance"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post(Dạo)",
+			"item": [
+				{
+					"name": "Upload post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "Tags",
+									"value": "nhiepanh,thietbi,nguoimau",
+									"type": "text"
+								},
+								{
+									"key": "Description",
+									"value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n\n",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/post-post/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"post-post",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/post-post?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"post-post"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "URL Image link",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/image/f5f8027b-7ae8-4351-a3a2-966e2724e2fb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"image",
+								"f5f8027b-7ae8-4351-a3a2-966e2724e2fb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/post-post/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"post-post",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletPost",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/post-post/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"post-post",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rating And Report",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/rating&report?rating=1&rank=0&page=1&limit=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"rating&report"
+							],
+							"query": [
+								{
+									"key": "rating",
+									"value": "1"
+								},
+								{
+									"key": "rank",
+									"value": "0"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDetailById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/rating&report/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"rating&report",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRatingByPostId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/rating&report/rating/6?rate=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"rating&report",
+								"rating",
+								"6"
+							],
+							"query": [
+								{
+									"key": "rate",
+									"value": "4"
+								},
+								{
+									"key": "des",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "Get All Notification",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/notification/noti?page=1&limit=10&option=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"notification",
+								"noti"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "option",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Title",
+									"value": "Lorem Ipsum",
+									"type": "text"
+								},
+								{
+									"key": "Content",
+									"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel cursus purus, a euismod massa. Aenean scelerisque nisi sed libero placerat, sed feugiat nunc rutrum. Cras at risus id arcu rhoncus condimentum ac ut nunc. Curabitur mattis, ipsum non tincidunt molestie, lacus orci semper nisl, id vehicula erat lacus nec orci. Integer consectetur dictum mi. Phasellus eu elit ornare, vulputate libero at, blandit felis. Curabitur dignissim, purus et convallis tincidunt, nunc ipsum eleifend odio, id consectetur lectus ex ut lacus. Donec gravida est nec tellus fermentum convallis. Maecenas maximus lobortis lacus luctus efficitur.",
+									"type": "text"
+								},
+								{
+									"key": "Type",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "SendingTime",
+									"value": "2022-08-26T19:25:05.582Z",
+									"type": "text"
+								},
+								{
+									"key": "Exception",
+									"value": "83,84,85:1",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/voduy/Documents/code/work/VNPLUS/BookingStudio_backend/build/media/illustrations/unitedpalms-1/3-dark.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/notification/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"notification",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Notification By Id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/notification/92",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"notification",
+								"92"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Notification By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/notification/noti/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"notification",
+								"noti",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fillterNotification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"createdAt\": {\n        \"startDate\": \"2020-01-30T17:39:08.081Z\",\n        \"endDate\": \"2022-07-30T17:39:08.081Z\"\n    },\n    \"Type\": \"\",\n    \"Status\": \"0\",\n    \"SendingTime\": {\n        \"startDate\": \"\",\n        \"endDate\": \"\"\n    },\n    \"userType\": \"0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/notification/fillter?limit=10&page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"notification",
+								"fillter"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/notification/user?option=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"notification",
+								"user"
+							],
+							"query": [
+								{
+									"key": "option",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "Create Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Content\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\",\n    \"PostId\":2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/comment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"comment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comment By Post Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/comment/38",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"comment",
+								"38"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Like",
+			"item": [
+				{
+					"name": "createLike",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"UserId\": 5,\n    \"PostId\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/like/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"like",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Schedule",
+			"item": [
+				{
+					"name": "Get Schedule By Room Id & MonthYear",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/schedule?roomId=1&monthAndYear=7-2022",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"schedule"
+							],
+							"query": [
+								{
+									"key": "roomId",
+									"value": "1"
+								},
+								{
+									"key": "monthAndYear",
+									"value": "7-2022"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"superadmin@admin.com\",\n    \"password\":\"BookingStudio1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification Key",
+			"item": [
+				{
+					"name": "Update Notification Key",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "GoogleApiFCM",
+									"value": "https://fcm.googleapis.com/fcm/send",
+									"type": "text"
+								},
+								{
+									"key": "AuthKey",
+									"value": "AAAAnpSURn4:APA91bGz8UBFIaROytrBmM2zVWNMG34Bo3fpXVPtmps-LxMk5u0ZXRsVadkaV2koxfnvP1gIid9sx2IAkFycy6LdRFa--WbTvK8yvYEQMuaG1XnvKTxGy1VGZQjGGZ4zP_xE8q1EEMmX",
+									"type": "text"
+								},
+								{
+									"key": "P12Certificate",
+									"type": "file",
+									"src": "/Users/voduy/Downloads/CertificatesBookingStudio2023.p12"
+								},
+								{
+									"key": "P12Password",
+									"value": "Vnplus@2023",
+									"type": "text"
+								},
+								{
+									"key": "P12BundleId",
+									"value": "com.vnplus.bookingstudio",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/notification-key",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"notification-key"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Conversation",
+			"item": [
+				{
+					"name": "create conversation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"withPartner\":true,\n    \"Chatter\":5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/chat/conversation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"chat",
+								"conversation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ConversationId\":1,\n    \"Content\":\"Thì ra, mùa xuân hoa nở, là vì em\",\n    \"Admin\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/chat/message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"chat",
+								"message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all conversation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/chat/conversation?page=1&limit=10&option=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"chat",
+								"conversation"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "option",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all message by conversation id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/chat/message?page=1&limit=10&ConversationId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"chat",
+								"message"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "ConversationId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/chat/conversation/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"chat",
+								"conversation",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Identify Image (CMND & GPKD)",
+			"item": [
+				{
+					"name": "get identify image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/image-license/46aa6299-342a-434a-add6-9f928ef7cf09",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"image-license",
+								"46aa6299-342a-434a-add6-9f928ef7cf09"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CssFile",
+			"item": [
+				{
+					"name": "Get All file css",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/css-file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"css-file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Css File",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "CssFile",
+									"type": "file",
+									"src": "/Users/voduy/Documents/code/react/electro-shop/src/index.css"
+								},
+								{
+									"key": "Description",
+									"value": "css trang chủ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/css-file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"css-file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get css file by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/css-file/27ab841a-7574-4fcb-ba44-3482480bbe22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"css-file",
+								"27ab841a-7574-4fcb-ba44-3482480bbe22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update css file",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "CssFile",
+									"type": "file",
+									"src": "/Users/voduy/Documents/code/react/electro-shop/src/index.css"
+								},
+								{
+									"key": "Description",
+									"value": "css cho trang ca nhan",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/css-file/27ab841a-7574-4fcb-ba44-3482480bbe22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"css-file",
+								"27ab841a-7574-4fcb-ba44-3482480bbe22"
+							],
+							"query": [
+								{
+									"key": "CssFile",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "Description",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Css file",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/css-file/27ab841a-7574-4fcb-ba44-3482480bbe22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"css-file",
+								"27ab841a-7574-4fcb-ba44-3482480bbe22"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SMTP",
+			"item": [
+				{
+					"name": "get all SMTP",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/smtp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"smtp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create SMTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Host\": \"string\",\n    \"Service\": \"string\",\n    \"Mail\": \"string\",\n    \"Password\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/smtp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"smtp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update smtp",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Host\": \"string\",\n    \"Service\": \"string\",\n    \"Mail\": \"string\",\n    \"Password\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/smtp/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"smtp",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get SMTP BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/smtp/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"smtp",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Webhook",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/webhook?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"webhook"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Statistic",
+			"item": [
+				{
+					"name": "Get Lastest Month",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/statistic/lasttest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"statistic",
+								"lasttest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "By Month and Year",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/statistic/bydate?Month=2&Year=2022",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"statistic",
+								"bydate"
+							],
+							"query": [
+								{
+									"key": "Month",
+									"value": "2"
+								},
+								{
+									"key": "Year",
+									"value": "2022"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Weeks By month and year",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/statistic/weekbydate?Month=8&Year=2021",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"statistic",
+								"weekbydate"
+							],
+							"query": [
+								{
+									"key": "Month",
+									"value": "8"
+								},
+								{
+									"key": "Year",
+									"value": "2021"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Last Week",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/statistic/lasttest-week",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"statistic",
+								"lasttest-week"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get with limit date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/statistic/get-limit-date?limit=30",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"statistic",
+								"get-limit-date"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Last Month",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/statistic/get-last-month",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"statistic",
+								"get-last-month"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get 'Specify day",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/statistic/get-specify-day?date={\"startDate\":\"\",\"endDate\":\"\"}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"statistic",
+								"get-specify-day"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "{\"startDate\":\"\",\"endDate\":\"\"}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post Report",
+			"item": [
+				{
+					"name": "get All report",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/post-report?page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"post-report"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Report",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Category\": 1,\n    \"PostId\": 2,\n    \"Content\": \"varchar(255555555)\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/post-report/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"post-report",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RestrictedWord",
+			"item": [
+				{
+					"name": "Get All Word",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/restricted-word",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"restricted-word"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/restricted-word/40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"restricted-word",
+								"40"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Value\": \"vagina\",\n    \"Description\": \"tu tho thien\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bookingstudio-cus.herokuapp.com/api/restricted-word",
+							"protocol": "https",
+							"host": [
+								"bookingstudio-cus",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"restricted-word"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Value\": \"vagina\",\n    \"Description\": \"từ ngữ thô thiển\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/restricted-word/40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"restricted-word",
+								"40"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/restricted-word/40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"restricted-word",
+								"40"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/restricted-word/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"restricted-word",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Count Visitor",
+			"item": [
+				{
+					"name": "Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/count-visitor/count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"count-visitor",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Last N Day",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/count-visitor/last-n-date?limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"count-visitor",
+								"last-n-date"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/count-visitor/specifyDay?date={\"startDate\":\"\",\"endDate\":\"\"}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"count-visitor",
+								"specifyDay"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "{\"startDate\":\"\",\"endDate\":\"\"}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

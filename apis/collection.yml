@@ -1,0 +1,1595 @@
+openapi: 3.0.0
+info:
+  title: BOOKINGSTUDIO_BACKEND
+  version: 1.0.0
+servers:
+  - url: http://localhost:3003
+  - url: https://bookingstudio-cus.herokuapp.com
+tags:
+  - name: Partner
+  - name: BookingUser
+  - name: Province
+  - name: Studio Post
+  - name: Booking
+  - name: Room
+  - name: Export Data
+  - name: Post(Dạo)
+  - name: Rating And Report
+  - name: Notification
+  - name: Comment
+  - name: Like
+  - name: Schedule
+  - name: Auth
+  - name: Notification Key
+  - name: Conversation
+  - name: Identify Image (CMND & GPKD)
+  - name: CssFile
+  - name: SMTP
+  - name: Webhook
+  - name: Statistic
+  - name: Post Report
+  - name: RestrictedWord
+  - name: Count Visitor
+paths:
+  /api/register-partner:
+    get:
+      tags:
+        - Partner
+      summary: Get All Partner
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/register-partner/3:
+    get:
+      tags:
+        - Partner
+      summary: Get Partner By Id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/register-partner/update/3:
+    patch:
+      tags:
+        - Partner
+      summary: Update Partner By Id
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                PartnerName:
+                  type: string
+                  example: Hang Đôi Studioooo
+                RepresentativeName:
+                  type: string
+                  example: Hoàng Đức Thắng
+                Phone:
+                  type: integer
+                  example: '0967445997'
+                OtherPhone:
+                  type: integer
+                  example: '0777445997'
+                Email:
+                  type: string
+                  example: hangdoistudio@gmail.com
+                ReEmail:
+                  type: string
+                  example: hangdoistudio@gmail.com
+                BusinessRegistrationLicenseNumber:
+                  type: integer
+                  example: '123'
+                Address:
+                  type: string
+                  example: 522 Nguyễn Hữu Thọ, p.Khuê Trung, q.Cẩm Lệ, Tp. Đà Nẵng
+                BankBranchName:
+                  type: string
+                  example: ACB bank - Chi nhánh Hòa Khánh
+                BankAccount:
+                  type: integer
+                  example: '2412037'
+                BankAccountOwnerName:
+                  type: string
+                  example: HOANG DUC THANG
+                IdentifyLicenses:
+                  type: string
+                  format: binary
+                Note:
+                  type: string
+                  example: asdasdasdasdasd
+                IsDeleted:
+                  type: boolean
+                  example: 'true'
+                SignalImage:
+                  type: string
+                  example: '[null,1,2,null]'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/register-partner/filter:
+    post:
+      tags:
+        - Partner
+      summary: Filter Partner
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                keyString: ''
+                CreateDate:
+                  startDate: ''
+                  endDate: ''
+                updateDate:
+                  startDate: ''
+                  endDate: ''
+                IsDeleted: false
+      parameters:
+        - name: access_token
+          in: header
+          schema:
+            type: string
+          example: >-
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiTmFtZSI6ImFkbWluIiwiaWF0IjoxNjU3NTE0MzExLCJleHAiOjE2NTc2MDA0NzV9.pvcYPjhBY1-CT4FsJ85ricyDEUzkL18tJwPPgSE_ftI
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/booking-user:
+    get:
+      tags:
+        - BookingUser
+      summary: Get All Booking User
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - BookingUser
+      summary: create booking user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: |-
+                {
+                    "providerId": "facebook.com",
+                    "reloadListener": null,
+                    "uid": "3166394823584408",
+                    "displayName": "Ngọc Quân",
+                    "email": "mylifeisbeto@gmail.com",
+                    "emailVerified": false,
+                    "phoneNumber": null,
+                    "    localStorage.setItem("token", resp.data.token);
+                ": "https://graph.facebook.com/3166394823584408/piure",
+                    "isAnonymous": false,
+                    "tenantId": null,
+                    "providerData": [
+                        {
+                            "providerId": "facebook.com",
+                            "uid": "3166394823584408",
+                            "displayName": "Ngọc Quân",
+                            "email": "mylifeisbeto@gmail.com",
+                            "phoneNumber": null,
+                            "photoURL": "https://graph.facebook.com/3166394823584408/picture"
+                        }
+                    ],
+                    "metadata": {
+                        "createdAt": "1659500461096",
+                        "lastLoginAt": "1659954081922"
+                    }
+                }
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/booking-user/2:
+    get:
+      tags:
+        - BookingUser
+      summary: Get Booking User By Id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    patch:
+      tags:
+        - BookingUser
+      summary: Update Booking User & Block acount send stutus:false
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                LastModificationTime: '2022-12-31T17:52:32.623Z'
+                Email: admin@admin.com
+                Note: ngu thi xoa
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/booking-user/filter:
+    post:
+      tags:
+        - BookingUser
+      summary: fillter
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                keyString: ''
+                IsDeleted: ''
+                CreateDate:
+                  startDate: ''
+                  endDate: ''
+                updateDate:
+                  startDate: ''
+                  endDate: ''
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/booking-user/login:
+    post:
+      tags:
+        - BookingUser
+      summary: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                phoneNumber: '+84909788677'
+                password: '123123'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/booking-user/me:
+    get:
+      tags:
+        - BookingUser
+      summary: me
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/province:
+    get:
+      tags:
+        - Province
+      summary: Get All Province
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/studio-post:
+    get:
+      tags:
+        - Studio Post
+      summary: Get All Studio Post
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+        - name: category
+          in: query
+          schema:
+            type: integer
+          example: '6'
+        - name: IsVisible
+          in: query
+          schema:
+            type: string
+        - name: CreationTime
+          in: query
+          schema:
+            type: string
+          example: '{"startDate":"","endDate":""}'
+        - name: LastModificationTime
+          in: query
+          schema:
+            type: string
+          example: '{"startDate":"","endDate":""}'
+        - name: Name_like
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/studio-post/byid:
+    get:
+      tags:
+        - Studio Post
+      summary: studioDetail
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: category
+          in: query
+          schema:
+            type: integer
+          example: '6'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    patch:
+      tags:
+        - Studio Post
+      summary: Update
+      requestBody:
+        content: {}
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: category
+          in: query
+          schema:
+            type: integer
+          example: '6'
+        - name: IsVisible
+          in: query
+          schema:
+            type: boolean
+          example: 'true'
+        - name: Note
+          in: query
+          schema:
+            type: string
+          example: ok
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Studio Post
+      summary: New Request
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: integer
+          example: '7'
+        - name: category
+          in: query
+          schema:
+            type: integer
+          example: '6'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/booking:
+    get:
+      tags:
+        - Booking
+      summary: Get All Booking
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+        - name: category
+          in: query
+          schema:
+            type: integer
+          example: '2'
+        - name: IsDeleted
+          in: query
+          schema:
+            type: string
+        - name: EntryDate
+          in: query
+          schema:
+            type: number
+          example: >-
+            {"startDate":"2021-11-30T17:44:44.679Z","endDate":"2022-01-30T17:44:44.679Z"}
+        - name: PaymentType
+          in: query
+          schema:
+            type: string
+        - name: Identify_like
+          in: query
+          schema:
+            type: string
+        - name: BookingStatus
+          in: query
+          schema:
+            type: integer
+          example: '0'
+        - name: PaymentStatus
+          in: query
+          schema:
+            type: integer
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Booking
+      summary: Filter Booking
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                OrderDate:
+                  startDate: ''
+                  endDate: ''
+                IsPayDeposit: false
+                PaymentType: null
+                BookingStatus: 2
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/booking/byid:
+    get:
+      tags:
+        - Booking
+      summary: Get Booking By Id
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: integer
+          example: '10'
+        - name: category
+          in: query
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    patch:
+      tags:
+        - Booking
+      summary: Update Booking
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                OrderByTime: true
+                OrderByTimeFrom: '2022-01-12T00:00:00.000Z'
+                OrderByTimeTo: '2022-01-12T00:00:00.000Z'
+                OrderByDateFrom: '2022-01-12T00:00:00.000Z'
+                OrderByDateTo: '2022-01-12T00:00:00.000Z'
+                PaymentType: null
+                OrderNote: null
+                BookingUserName: Anh Anh Em Em
+                BookingPhone: '0914481315'
+                BookingStatus: 1
+                BookingEmail: null
+                StudioRoomId: 3
+                PromoCodeId: null
+                CreatorUserId: 1
+                LastModifierUserId: null
+                IsDeleted: false
+                DeleterUserId: null
+                DeletionTime: null
+                EvidenceImage: null
+                IsPayDeposit: true
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: integer
+          example: '2'
+        - name: category
+          in: query
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/room:
+    get:
+      tags:
+        - Room
+      summary: Get All Room
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/filter:
+    get:
+      tags:
+        - Export Data
+      summary: Filter
+      parameters:
+        - name: option
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: ProvinceId
+          in: query
+          schema:
+            type: integer
+          example: '2'
+        - name: isDelete
+          in: query
+          schema:
+            type: string
+        - name: CreateDate
+          in: query
+          schema:
+            type: number
+          example: >-
+            {"startDate": "2021-11-30T17:39:08.081Z","endDate":
+            "2022-12-30T17:39:08.081Z"}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/filter/advance:
+    post:
+      tags:
+        - Export Data
+      summary: New Request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                keyString: ''
+                category: 1
+                priceOption: 0
+                price1: 0
+                price2: 10000000000000000
+                provinceIds: []
+                ratingOption: 1
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/post-post/:
+    post:
+      tags:
+        - Post(Dạo)
+      summary: Upload post
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+                Tags:
+                  type: string
+                  example: nhiepanh,thietbi,nguoimau
+                Description:
+                  type: string
+                  example: >+
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting, remaining
+                    essentially unchanged. It was popularised in the 1960s with
+                    the release of Letraset sheets containing Lorem Ipsum
+                    passages, and more recently with desktop publishing software
+                    like Aldus PageMaker including versions of Lorem Ipsum.
+
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/post-post:
+    get:
+      tags:
+        - Post(Dạo)
+      summary: Get post
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/image/f5f8027b-7ae8-4351-a3a2-966e2724e2fb:
+    get:
+      tags:
+        - Post(Dạo)
+      summary: URL Image link
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/post-post/2:
+    get:
+      tags:
+        - Post(Dạo)
+      summary: Get Post By Id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/post-post/6:
+    delete:
+      tags:
+        - Post(Dạo)
+      summary: DeletPost
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/rating&report:
+    get:
+      tags:
+        - Rating And Report
+      summary: Get All
+      parameters:
+        - name: rating
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: rank
+          in: query
+          schema:
+            type: integer
+          example: '0'
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '5'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/rating&report/1:
+    get:
+      tags:
+        - Rating And Report
+      summary: getDetailById
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/rating&report/rating/6:
+    get:
+      tags:
+        - Rating And Report
+      summary: getRatingByPostId
+      parameters:
+        - name: rate
+          in: query
+          schema:
+            type: integer
+          example: '4'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/notification/noti:
+    get:
+      tags:
+        - Notification
+      summary: Get All Notification
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+        - name: option
+          in: query
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/notification/:
+    post:
+      tags:
+        - Notification
+      summary: Create Notification
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                Title:
+                  type: string
+                  example: Lorem Ipsum
+                Content:
+                  type: string
+                  example: >-
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Praesent vel cursus purus, a euismod massa. Aenean
+                    scelerisque nisi sed libero placerat, sed feugiat nunc
+                    rutrum. Cras at risus id arcu rhoncus condimentum ac ut
+                    nunc. Curabitur mattis, ipsum non tincidunt molestie, lacus
+                    orci semper nisl, id vehicula erat lacus nec orci. Integer
+                    consectetur dictum mi. Phasellus eu elit ornare, vulputate
+                    libero at, blandit felis. Curabitur dignissim, purus et
+                    convallis tincidunt, nunc ipsum eleifend odio, id
+                    consectetur lectus ex ut lacus. Donec gravida est nec tellus
+                    fermentum convallis. Maecenas maximus lobortis lacus luctus
+                    efficitur.
+                Type:
+                  type: integer
+                  example: '2'
+                SendingTime:
+                  type: number
+                  example: '2022-08-26T19:25:05.582Z'
+                Exception:
+                  type: string
+                  example: 83,84,85:1
+                image:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/notification/92:
+    patch:
+      tags:
+        - Notification
+      summary: Cancel Notification By Id
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/notification/noti/8:
+    get:
+      tags:
+        - Notification
+      summary: Get Notification By ID
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/notification/fillter:
+    post:
+      tags:
+        - Notification
+      summary: fillterNotification
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                createdAt:
+                  startDate: '2020-01-30T17:39:08.081Z'
+                  endDate: '2022-07-30T17:39:08.081Z'
+                Type: ''
+                Status: '0'
+                SendingTime:
+                  startDate: ''
+                  endDate: ''
+                userType: '0'
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/notification/user:
+    get:
+      tags:
+        - Notification
+      summary: Get all user
+      parameters:
+        - name: option
+          in: query
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/comment/:
+    post:
+      tags:
+        - Comment
+      summary: Create Comment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                Content: >-
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged. It was popularised in the 1960s with
+                  the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software
+                  like Aldus PageMaker including versions of Lorem Ipsum.
+                PostId: 2
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/comment/38:
+    get:
+      tags:
+        - Comment
+      summary: Get Comment By Post Id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/like/:
+    post:
+      tags:
+        - Like
+      summary: createLike
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                UserId: 5
+                PostId: 2
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/schedule:
+    get:
+      tags:
+        - Schedule
+      summary: Get Schedule By Room Id & MonthYear
+      parameters:
+        - name: roomId
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: monthAndYear
+          in: query
+          schema:
+            type: string
+          example: 7-2022
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/auth/login:
+    post:
+      tags:
+        - Auth
+      summary: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: superadmin@admin.com
+                password: BookingStudio1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/notification-key:
+    patch:
+      tags:
+        - Notification Key
+      summary: Update Notification Key
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                GoogleApiFCM:
+                  type: string
+                  example: https://fcm.googleapis.com/fcm/send
+                AuthKey:
+                  type: string
+                  example: >-
+                    AAAAnpSURn4:APA91bGz8UBFIaROytrBmM2zVWNMG34Bo3fpXVPtmps-LxMk5u0ZXRsVadkaV2koxfnvP1gIid9sx2IAkFycy6LdRFa--WbTvK8yvYEQMuaG1XnvKTxGy1VGZQjGGZ4zP_xE8q1EEMmX
+                P12Certificate:
+                  type: string
+                  format: binary
+                P12Password:
+                  type: string
+                  example: Vnplus@2023
+                P12BundleId:
+                  type: string
+                  example: com.vnplus.bookingstudio
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/chat/conversation:
+    post:
+      tags:
+        - Conversation
+      summary: create conversation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                withPartner: true
+                Chatter: 5
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Conversation
+      summary: get all conversation
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+        - name: option
+          in: query
+          schema:
+            type: integer
+          example: '0'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/chat/message:
+    post:
+      tags:
+        - Conversation
+      summary: create message
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                ConversationId: 1
+                Content: Thì ra, mùa xuân hoa nở, là vì em
+                Admin: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - Conversation
+      summary: get all message by conversation id
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+        - name: ConversationId
+          in: query
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/chat/conversation/1:
+    get:
+      tags:
+        - Conversation
+      summary: by ID
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /image-license/46aa6299-342a-434a-add6-9f928ef7cf09:
+    get:
+      tags:
+        - Identify Image (CMND & GPKD)
+      summary: get identify image
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/css-file:
+    get:
+      tags:
+        - CssFile
+      summary: Get All file css
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - CssFile
+      summary: Create Css File
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                CssFile:
+                  type: string
+                  format: binary
+                Description:
+                  type: string
+                  example: css trang chủ
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/css-file/27ab841a-7574-4fcb-ba44-3482480bbe22:
+    get:
+      tags:
+        - CssFile
+      summary: get css file by id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    patch:
+      tags:
+        - CssFile
+      summary: Update css file
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                CssFile:
+                  type: string
+                  format: binary
+                Description:
+                  type: string
+                  example: css cho trang ca nhan
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - CssFile
+      summary: Delete Css file
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/smtp:
+    get:
+      tags:
+        - SMTP
+      summary: get all SMTP
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - SMTP
+      summary: create SMTP
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                Host: string
+                Service: string
+                Mail: string
+                Password: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/smtp/1:
+    patch:
+      tags:
+        - SMTP
+      summary: update smtp
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                Host: string
+                Service: string
+                Mail: string
+                Password: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - SMTP
+      summary: get SMTP BY ID
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/webhook:
+    get:
+      tags:
+        - Webhook
+      summary: getAll
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/statistic/lasttest:
+    get:
+      tags:
+        - Statistic
+      summary: Get Lastest Month
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/statistic/bydate:
+    get:
+      tags:
+        - Statistic
+      summary: By Month and Year
+      parameters:
+        - name: Month
+          in: query
+          schema:
+            type: integer
+          example: '2'
+        - name: Year
+          in: query
+          schema:
+            type: integer
+          example: '2022'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/statistic/weekbydate:
+    get:
+      tags:
+        - Statistic
+      summary: Get Weeks By month and year
+      parameters:
+        - name: Month
+          in: query
+          schema:
+            type: integer
+          example: '8'
+        - name: Year
+          in: query
+          schema:
+            type: integer
+          example: '2021'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/statistic/lasttest-week:
+    get:
+      tags:
+        - Statistic
+      summary: get Last Week
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/statistic/get-limit-date:
+    get:
+      tags:
+        - Statistic
+      summary: Get with limit date
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '30'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/statistic/get-last-month:
+    get:
+      tags:
+        - Statistic
+      summary: Get Last Month
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/statistic/get-specify-day:
+    get:
+      tags:
+        - Statistic
+      summary: Get 'Specify day
+      parameters:
+        - name: date
+          in: query
+          schema:
+            type: string
+          example: '{"startDate":"","endDate":""}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/post-report:
+    get:
+      tags:
+        - Post Report
+      summary: get All report
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/post-report/:
+    post:
+      tags:
+        - Post Report
+      summary: Create Report
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                Category: 1
+                PostId: 2
+                Content: varchar(255555555)
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/restricted-word:
+    get:
+      tags:
+        - RestrictedWord
+      summary: Get All Word
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - RestrictedWord
+      summary: Create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                Value: vagina
+                Description: tu tho thien
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/restricted-word/40:
+    get:
+      tags:
+        - RestrictedWord
+      summary: Get By Id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    patch:
+      tags:
+        - RestrictedWord
+      summary: Update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                Value: vagina
+                Description: từ ngữ thô thiển
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - RestrictedWord
+      summary: Delete
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/restricted-word/:
+    delete:
+      tags:
+        - RestrictedWord
+      summary: Delete All
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/count-visitor/count:
+    get:
+      tags:
+        - Count Visitor
+      summary: Count
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/count-visitor/last-n-date:
+    get:
+      tags:
+        - Count Visitor
+      summary: get Last N Day
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: '10'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/count-visitor/specifyDay:
+    get:
+      tags:
+        - Count Visitor
+      summary: New Request
+      parameters:
+        - name: date
+          in: query
+          schema:
+            type: string
+          example: '{"startDate":"","endDate":""}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

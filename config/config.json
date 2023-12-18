@@ -1,0 +1,27 @@
+{
+  "development": {
+    "username": "plusadmin",
+    "password": "Plusadmin@2020",
+    "database": "bookingstudiotest",
+    "host": "35.198.254.31",
+    "dialect": "mysql",
+    "logging": true
+  },
+
+  "test": {
+    "username": "plusadmin",
+    "password": "Plusadmin@2020",
+    "database": "bookingstudiotest",
+    "host": "35.198.254.31",
+    "dialect": "mysql",
+    "logging": false
+  },
+  "production": {
+    "username": "plusadmin",
+    "password": "Plusadmin@2020",
+    "database": "bookingstudiotest",
+    "host": "35.198.254.31",
+    "dialect": "mysql",
+    "logging": false
+  }
+}
